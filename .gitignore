@@ -4,6 +4,7 @@
 
 # 1. CRITICAL: SENSITIVE FILES
 db_connect.php
+db_connect_permisson.php
 wp-config.php  # WordPress database config
 
 # 2. WORDPRESS CORE
