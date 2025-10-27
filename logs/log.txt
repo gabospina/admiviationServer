@@ -1,0 +1,160 @@
+
+SELECT DISTINCT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.comandante=1 AND p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-03-24' AND `off`>'2015-03-24') 
+		  AND contracts LIKE '%2 ENI%' AND p.crafts LIKE '%EC225%' AND p.id NOT IN (SELECT id FROM schedule WHERE `sched_date`='2015-03-24') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE DATE_ADD(`date`, INTERVAL length DAY)<='2015-03-23') 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE DATE_ADD(`date`, INTERVAL length DAY)<='2015-03-23') 
+		AND p.id NOT IN (SELECT tri_id FROM training_schedule WHERE DATE_ADD(`date`, INTERVAL length DAY)<='2015-03-23') 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE DATE_ADD(`date`, INTERVAL length DAY)<='2015-03-23')  
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-03-23' AND c.tod!='day')
+SELECT DISTINCT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.comandante=1 AND p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-03-25' AND `off`>'2015-03-25') 
+		  AND contracts LIKE '%1 Esso%' AND p.crafts LIKE '%EC225%' AND p.id NOT IN (SELECT id FROM schedule WHERE `sched_date`='2015-03-25') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE `date`<='2015-03-24' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-03-25') 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE `date`<='2015-03-24' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-03-25') 
+		AND p.id NOT IN (SELECT tri_id FROM training_schedule WHERE `date`<='2015-03-24' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-03-25') 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE `date`<='2015-03-24' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-03-25')  
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-03-24' AND c.tod!='day')
+SELECT DISTINCT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.comandante=1 AND p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-04-07' AND `off`>'2015-04-07') 
+		  AND contracts LIKE '%Total%' AND p.crafts LIKE '%EC225%' AND p.id NOT IN (SELECT id FROM schedule WHERE `sched_date`='2015-04-07') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND pilot_id1 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND pilot_id2 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id3 FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND pilot_id3 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id4 FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND pilot_id4 IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri1_id FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND tri1_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri2_id FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND tri2_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND tre_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-04-06' AND c.tod!='day')
+SELECT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-04-07' AND `off`>'2015-04-07') 
+		  AND contracts LIKE '%Total%' AND p.crafts LIKE '%EC225%' AND p.id NOT IN (SELECT id FROM schedule WHERE sched_date='2015-04-07') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND pilot_id1 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND pilot_id2 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id3 FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND pilot_id3 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id4 FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND pilot_id4 IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri1_id FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND tri1_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri2_id FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND tri2_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE `date`<='2015-04-06' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-07' AND tre_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-04-06' AND c.tod!='day')
+SELECT DISTINCT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.comandante=1 AND p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-04-19' AND `off`>'2015-04-19') 
+		  AND contracts LIKE '%BP%' AND p.crafts LIKE '%S92%' AND p.id NOT IN (SELECT id FROM schedule WHERE `sched_date`='2015-04-19') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id1 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id2 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id3 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id3 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id4 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id4 IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri1_id FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND tri1_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri2_id FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND tri2_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND tre_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-04-18' AND c.tod!='day') 
+		AND p.account=2
+SELECT DISTINCT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.comandante=1 AND p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-04-13' AND `off`>'2015-04-13') 
+		  AND contracts LIKE '%BP%' AND p.crafts LIKE '%S92%' AND p.id NOT IN (SELECT id FROM schedule WHERE `sched_date`='2015-04-13') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND pilot_id1 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND pilot_id2 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id3 FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND pilot_id3 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id4 FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND pilot_id4 IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri1_id FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND tri1_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri2_id FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND tri2_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND tre_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-04-12' AND c.tod!='day') 
+		AND p.account=2
+SELECT DISTINCT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.comandante=1 AND p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-04-13' AND `off`>'2015-04-13') 
+		  AND contracts LIKE '%BP%' AND p.crafts LIKE '%S92%' AND p.id NOT IN (SELECT id FROM schedule WHERE `sched_date`='2015-04-13') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND pilot_id1 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND pilot_id2 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id3 FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND pilot_id3 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id4 FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND pilot_id4 IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri1_id FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND tri1_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri2_id FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND tri2_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND tre_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-04-12' AND c.tod!='day') 
+		AND p.account=2
+SELECT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-04-13' AND `off`>'2015-04-13') 
+		  AND contracts LIKE '%BP%' AND p.crafts LIKE '%S92%' AND p.id NOT IN (SELECT id FROM schedule WHERE sched_date='2015-04-13') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND pilot_id1 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND pilot_id2 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id3 FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND pilot_id3 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id4 FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND pilot_id4 IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri1_id FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND tri1_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri2_id FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND tri2_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE `date`<='2015-04-12' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-13' AND tre_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-04-12' AND c.tod!='day') 
+		AND p.account=2
+SELECT DISTINCT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.comandante=1 AND p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-04-16' AND `off`>'2015-04-16') 
+		  AND contracts LIKE '%BP%' AND p.crafts LIKE '%S92%' AND p.id NOT IN (SELECT id FROM schedule WHERE `sched_date`='2015-04-16') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND pilot_id1 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND pilot_id2 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id3 FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND pilot_id3 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id4 FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND pilot_id4 IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri1_id FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND tri1_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri2_id FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND tri2_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND tre_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-04-15' AND c.tod!='day') 
+		AND p.account=2
+SELECT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-04-16' AND `off`>'2015-04-16') 
+		  AND contracts LIKE '%BP%' AND p.crafts LIKE '%S92%' AND p.id NOT IN (SELECT id FROM schedule WHERE sched_date='2015-04-16') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND pilot_id1 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND pilot_id2 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id3 FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND pilot_id3 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id4 FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND pilot_id4 IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri1_id FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND tri1_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri2_id FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND tri2_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE `date`<='2015-04-15' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-16' AND tre_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-04-15' AND c.tod!='day') 
+		AND p.account=2
+SELECT DISTINCT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.comandante=1 AND p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-04-19' AND `off`>'2015-04-19') 
+		  AND contracts LIKE '%BP%' AND p.crafts LIKE '%S92%' AND p.id NOT IN (SELECT id FROM schedule WHERE `sched_date`='2015-04-19') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id1 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id2 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id3 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id3 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id4 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id4 IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri1_id FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND tri1_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri2_id FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND tri2_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND tre_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-04-18' AND c.tod!='day') 
+		AND p.account=2
+SELECT DISTINCT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.comandante=1 AND p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-04-19' AND `off`>'2015-04-19') 
+		  AND contracts LIKE '%BP%' AND p.crafts LIKE '%S92%' AND p.id NOT IN (SELECT id FROM schedule WHERE `sched_date`='2015-04-19') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id1 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id2 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id3 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id3 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id4 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id4 IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri1_id FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND tri1_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri2_id FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND tri2_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND tre_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-04-18' AND c.tod!='day') 
+		AND p.account=2
+SELECT p.id, p.fname, p.lname 
+		FROM pilot_info p
+		WHERE p.id IN (SELECT DISTINCT id FROM available WHERE `on`<'2015-04-19' AND `off`>'2015-04-19') 
+		  AND contracts LIKE '%BP%' AND p.crafts LIKE '%S92%' AND p.id NOT IN (SELECT id FROM schedule WHERE sched_date='2015-04-19') 
+		AND p.id NOT IN (SELECT pilot_id1 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id1 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id2 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id2 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id3 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id3 IS NOT NULL) 
+		AND p.id NOT IN (SELECT pilot_id4 FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND pilot_id4 IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri1_id FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND tri1_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tri2_id FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND tri2_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT tre_id FROM training_schedule WHERE `date`<='2015-04-18' AND DATE_ADD(`date`, INTERVAL length DAY)>='2015-04-19' AND tre_id IS NOT NULL) 
+		AND p.id NOT IN (SELECT s.id FROM schedule s INNER JOIN crafts c ON c.class=s.craft WHERE s.sched_date='2015-04-18' AND c.tod!='day') 
+		AND p.account=2

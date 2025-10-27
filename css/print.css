@@ -1,0 +1,39 @@
+@media print {
+    @page {
+        size: landscape;
+        margin: 0.5cm;
+    }
+
+    body {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+        font-size: 9pt !important;
+    }
+
+    th,
+    td {
+        border: 1px solid #000 !important;
+        padding: 4px !important;
+        text-align: center !important;
+    }
+
+    /*
+      ======================================================
+      === CORRECTED: Force printing of background colors ===
+      ======================================================
+      This rule targets any element with an inline background color
+      and ensures it gets printed. This is essential for your
+      contract legend color boxes.
+    */
+    [style*="background-color"] {
+        /* The standard property, should be first */
+        print-color-adjust: exact !important;
+        /* The vendor prefix for older WebKit browsers (like Safari) */
+        -webkit-print-color-adjust: exact !important;
+    }
+}

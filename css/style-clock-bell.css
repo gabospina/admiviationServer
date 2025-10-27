@@ -1,0 +1,186 @@
+/* ================================================================
+   style-clock-bell.css (DEFINITIVE, INTEGRATED VERSION)
+=================================================================== */
+
+/* 1. Main navigation bar uses Flexbox for alignment */
+/* This rule is correct and should remain here if it's working for you. */
+#navcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    height: 60px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    min-width: 645px;
+    z-index: 1000;
+    background: #222A2D;
+    box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.75);
+    border-bottom: 1px solid #1B1B1B;
+}
+
+/* 2. Wrapper for all items on the right side */
+.header-right-items {
+    display: flex;
+    align-items: center;
+    /* Vertically aligns all items in the group */
+    height: 100%;
+}
+
+/* 3. Wrapper for JUST the icons (Bell and Clock) */
+#header-icons-wrapper {
+    display: flex;
+    /* Makes the Bell and Clock sit side-by-side */
+    height: 100%;
+}
+
+/* 4. General styling for the dark grey icon buttons (Bell and Clock) */
+.header-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 60px;
+    background-color: rgb(45, 54, 57);
+    border-left: 1px solid #141a1b;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 0 2px 1px #222A2D inset;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.header-icon-btn:hover {
+    background-color: rgb(54, 63, 66);
+    text-decoration: none;
+}
+
+.header-icon-btn .fa {
+    color: rgb(204, 222, 225);
+    font-size: 2.2em;
+}
+
+/* 5. Specific styling for the User Dropdown to make it orange */
+#user-dropdown {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-color: #F77740;
+    border-left: 1px solid #141a1b;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#user-dropdown:hover {
+    background-color: #eea236;
+    /* A slightly darker orange for hover */
+}
+
+#user-dropdown .dropdown-header {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+#user-dropdown .dropdown-header b,
+#user-dropdown .dropdown-header span {
+    color: white;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+#user-dropdown .dropdown-header .fa-sort-down {
+    margin-left: 10px;
+    color: white;
+}
+
+/* MOVE Clock & Bell icon together */
+#standalone-clock-container {
+    /* position: relative;
+    height: 100%; */
+    margin-right: 30px;
+}
+
+/* MOVE username container only*/
+#user-dropdown {
+    margin-right: 0px;
+}
+
+/* MOVE the clock icon only*/
+#notification-dropdown {
+    margin-right: 40px;
+}
+
+.dropdown-content,
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1001;
+    display: none;
+    /* JS will handle showing/hiding */
+    background-color: #141a1b;
+    /* Default background for dropdowns */
+    border: 1px solid #141a1b;
+    color: white;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* 7. Specific styling for each component */
+#notification-number {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background-color: #ec8b24;
+    padding: 2px 5px;
+    font-size: 10px;
+    border-radius: 10px;
+    display: none;
+}
+
+#user-dropdown .dropdown-content {
+    background-color: #333;
+    /* Specific background for user dropdown */
+    min-width: 180px;
+}
+
+.clock-dropdown-menu {
+    padding: 15px;
+    width: 280px;
+}
+
+.clock-dropdown-menu .lbl {
+    font-weight: normal;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #3F5256;
+    padding-bottom: 3px;
+    color: white;
+}
+
+.clock-dropdown-menu .timeVal {
+    font-size: 1.3em;
+    letter-spacing: 2px;
+    color: white !important;
+}
+
+.notification-dropdown-menu {
+    padding: 0;
+    width: 350px;
+}
+
+.notification-dropdown-menu .notification-item {
+    padding: 10px 15px;
+    border-bottom: 1px solid #3F5256;
+    font-size: 14px;
+    color: #ccc;
+    white-space: normal;
+}
+
+.notification-dropdown-menu .notification-item:hover {
+    background-color: #3F5256;
+}
+
+.notification-dropdown-menu .notification-item:last-child {
+    border-bottom: none;
+}

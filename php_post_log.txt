@@ -1,0 +1,51 @@
+Received POST Data:
+Array
+(
+    [date] => 2025-05-06
+    [craft_type] => S76
+    [registration] => C-DFGW
+    [PIC] => G. Ospina
+    [SIC] => Oscar
+    [route] => ddsfdsf
+    [ifr] => 1
+    [vfr] => 1
+    [nightTime] => 0
+    [totalHours] => 2.0
+    [hour_type] => day
+)
+
+---
+Received POST Data:
+Array
+(
+    [date] => 2025-05-06
+    [craft_type] => S76
+    [registration] => C-FGHJ
+    [PIC] => G. Ospina
+    [SIC] => Ramiro
+    [route] => ddsfdsf
+    [ifr] => 10
+    [vfr] => 1
+    [nightTime] => 0
+    [totalHours] => 11.0
+    [hour_type] => day
+)
+
+---
+Received POST Data:
+Array
+(
+    [date] => 2025-05-06
+    [craft_type] => S92
+    [registration] => C-DFGW
+    [PIC] => G. Ospina
+    [SIC] => Oscar
+    [route] => ddsfdsf
+    [ifr] => 10
+    [vfr] => 1
+    [nightTime] => 0
+    [totalHours] => 11.0
+    [hour_type] => day
+)
+
+---

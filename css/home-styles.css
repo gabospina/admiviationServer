@@ -1,0 +1,230 @@
+/* Fix for content being hidden by fixed navbar */
+.content {
+    padding-top: 20px;
+}
+
+/* Consistent card styling */
+.card {
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.card-header {
+    padding: 10px 15px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.card-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+@page {
+    size: landscape;
+    margin: 0.5cm;
+}
+
+body * {
+    visibility: hidden;
+}
+
+.schedule-container,
+.schedule-container * {
+    visibility: visible;
+}
+
+.schedule-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.no-print,
+#advancedSelect,
+#myScheduleSection h2,
+.filter-row {
+    display: none !important;
+}
+
+table {
+    width: 100% !important;
+    font-size: 10pt;
+}
+
+th,
+td {
+    padding: 4px !important;
+}
+
+/* 2nd */
+/* My Schedule specific styles */
+.myScheduleSection {
+    margin-top: 30px;
+    background-color: rgb(16, 240, 101);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mysched {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.mysched th {
+    background-color: #343a40;
+    color: white;
+    padding: px;
+    text-align: center;
+    min-width: 120px;
+}
+
+.mysched td {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    vertical-align: top;
+    height: 100px;
+}
+
+.mysched .day-name {
+    font-weight: bold;
+    display: block;
+}
+
+.mysched .date {
+    font-size: 0.9em;
+    display: block;
+}
+
+.badge {
+    font-size: 0.8em;
+    padding: 4px 8px;
+}
+
+/* Schedule Table Styles */
+.fullsched {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.fullsched th,
+.fullsched td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.fullsched th {
+    background-color: #f2f2f2;
+    position: sticky;
+    top: 0;
+}
+
+.fullsched .aircraft-header {
+    background-color: #e6f7ff;
+    text-align: right;
+    padding-right: 15px;
+}
+
+.fullsched select {
+    width: 120px;
+    margin: 2px 0;
+}
+
+/* Print Styles */
+@media print {
+
+    #fullScheduleLegend,
+    #printRow {
+        display: none;
+    }
+
+    .fullsched {
+        width: 100% !important;
+    }
+}
+
+select.loading {
+    background-color: #f8f9fa;
+    opacity: 0.7;
+}
+
+.alert {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.modified-time {
+    font-size: 0.8em;
+    color: #6c757d;
+    font-style: italic;
+}
+
+#saveScheduleBtn .fa-spinner {
+    margin-right: 5px;
+}
+
+.alert {
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+select.saving {
+    opacity: 0.7;
+    background-color: #f8f9fa;
+}
+
+.past-day {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.past-day select,
+.past-day input {
+    background-color: #e9ecef !important;
+    border-color: #dee2e6 !important;
+}
+
+/* My Schedule Balck boxes - Add to your existing CSS */
+#myScheduleSection {
+    margin-top: 5px;
+    background-color: rgb(163, 220, 236);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#myScheduleSection h2 {
+    color: rgb(227, 27, 77);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.mysched td {
+    height: 40px;
+    /* Fixed height for consistent appearance */
+}
+
+.assignment {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: rgba(227, 230, 102, 0.23);
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(8, 43, 218, 0.23);
+}
+
+.assignment:hover {
+    background-color: rgb(206, 91, 91);
+}

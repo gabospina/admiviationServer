@@ -1,0 +1,45 @@
+/* css/statistics-styles.css */
+
+#addIFRInstrument,
+#addVFRVisual,
+#addNightTime,
+#addTotalFlightTime {
+    max-width: 8em;
+}
+
+#addCraftType,
+#addCraftRegistration {
+    max-width: 18em;
+}
+
+#addCraftTypeInput,
+#addCraftRegistrationInput {
+    max-width: 18em;
+    margin-top: 5px;
+}
+
+#addHourForm .form-group {
+    margin-bottom: 8px;
+    /* Adjust vertical spacing */
+}
+
+/* Add to statistics-styles.css or inside <style> in header.php */
+
+#graphSection {
+    width: 100%;
+    /* Take full width of its column */
+    height: 400px;
+    /* SET A FIXED HEIGHT */
+    min-height: 350px;
+    /* Or at least a minimum height */
+    /* Ensure visibility if parents hide it */
+    /* display: block !important; */
+    /* Use with caution */
+}
+
+/* Ensure the tab pane is block when active (Bootstrap usually does this) */
+.tab-content>.tab-pane#graphs.active {
+    display: block;
+}
+
+/* Add any other statistics-page-specific rules here */

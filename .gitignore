@@ -1,0 +1,47 @@
+#
+# --- Admiviation .gitignore (FINAL WordPress Version) ---
+#
+
+# 1. CRITICAL: SENSITIVE FILES
+db_connect.php
+wp-config.php  # WordPress database config
+
+# 2. WORDPRESS CORE
+# Never commit WordPress core files.
+/wp-admin/
+/wp-includes/
+/wp-content/plugins/
+/wp-content/themes/
+/wp-content/upgrade/
+/wp-content/uploads/
+
+# 3. VENDOR & THIRD-PARTY LIBRARIES
+/PHPOffice/
+
+# 4. LOGS, CACHE, AND ARCHIVES
+/debug_logs/
+*.log
+error_log
+*.zip
+*.rar
+*.gz
+*.tar
+
+# 5. SYSTEM & IDE FILES
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+nbproject/
+.htaccess # This is often environment-specific
+
+# 6. WordPress-specific files
+/sitemap.xml
+/sitemap.xml.gz
+/wp-content/advanced-cache.php
+/wp-content/backup-db/
+/wp-content/backups/
+/wp-content/cache/
+/wp-content/wflogs/
+/wp-content/wp-cache-config.php
+/wp-content/blogs.dir/
